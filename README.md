@@ -4,6 +4,8 @@ Tech stack used: HTML, CSS, JavaScript, Bootstrap, REST API</br>
 IDE used: Visual Studio Code</br>
 API used: https://api.covid19api.com/summary </br>
      https://api.covid19api.com/countries</br>
-
+</br> 
+</br>
+I took reference from WHO about corona. Also cowin website for helpline numbers.</br>
 ## Visuals </br>
 https://covid-19-trackerwebsite.netlify.app/
