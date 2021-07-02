@@ -1,6 +1,6 @@
 # COVID-19-TRACKER
 ## Description
-• This project tracks COVID-19 cases using covid19api API where user can view Total Confirmed cases, Total recovered cases and  total deaths. It shows the data  in three categories i.e, whole world,  india  and of each country of the world. It also contains  information regarding Corona virus and its prevention. Helpline numbers have also been mentioned for public convenience. </br> </br>
+• This project tracks COVID-19 cases using covid19api API where user can view Total Confirmed cases, Total Active cases, Total recovered cases and  total deaths. It shows the data  in three categories i.e, whole world,  india  and of each country of the world. It also contains  information regarding Corona virus and its prevention. Helpline numbers have also been mentioned for public convenience. </br> </br>
 • Tech stack used: HTML, CSS, JavaScript, Bootstrap, REST API</br>
  • IDE used: Visual Studio Code</br>
  • API used: https://api.covid19api.com/summary </br>
