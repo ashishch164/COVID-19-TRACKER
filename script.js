@@ -19,14 +19,14 @@ $(document).ready(function () {
 
 main()
 
-$('#othercountrydatabox').hide()
-$('#othercountrybtn').show()
+$('#othercountrydatabox').hide();
+$('#othercountrybtn').show();
 function main() {
 
   $('#othercountrydatabox').hide()
-  var url = "https://api.covid19api.com/summary"
-  var globaldata = ''
-  var countrydata = ''
+  var url = "https://api.covid19api.com/summary";
+  var globaldata = '';
+  var countrydata = '';
   $.get(url, function (data) {
     //  console.log(data.Global)
 
@@ -38,7 +38,7 @@ function main() {
            <td> ${data.Global.NewRecovered}</td>
            <td> ${data.Global.NewDeaths}</td>
           `
-    $("#data").html(globaldata)
+    $("#data").html(globaldata);
 
     countrydata = `<td> ${data.Countries[76].TotalConfirmed}</td>
          <td> ${data.Countries[76].TotalConfirmed - data.Countries[76].TotalRecovered - data.Countries[76].TotalDeaths}</td>
@@ -48,40 +48,39 @@ function main() {
          <td> ${data.Countries[76].NewRecovered}</td>
          <td> ${data.Countries[76].NewDeaths}</td>
         `
-    $("#countrydata").html(countrydata)
-    console.log(data.Countries)
-    console.log(data.Global)
+    $("#countrydata").html(countrydata);
+    console.log(data.Countries);
+    console.log(data.Global);
   })
 }
 function othercountrydata() {
-  $('#othercountrybtn').hide()
-  $('#othercountrydatabox').show()
-  var url = "https://api.covid19api.com/summary"
-  //  var otherdata=''
-  $.get(url, function (data) {
+  $('#othercountrybtn').hide();
+  $('#othercountrydatabox').show();
+  var url = "https://api.covid19api.com/summary";
    
-    for (let index = 0; index < 192; index++) {
+  $.get(url, function (data) {
+      for (let index = 0; index < 192; index++) {
       var table = document.getElementById("newtable");
       var row = table.insertRow(index + 1)
-      var cell1 = row.insertCell(0)
-      var cell2 = row.insertCell(1)
-      var cell3 = row.insertCell(2)
-      var cell4 = row.insertCell(3)
-      var cell5 = row.insertCell(4)
-      cell1.innerHTML = data.Countries[index].Country
-      cell2.innerHTML = data.Countries[index].TotalConfirmed
-      cell3.innerHTML = data.Countries[index].TotalConfirmed - data.Countries[index].TotalDeaths - data.Countries[index].TotalRecovered
-      cell5.innerHTML = data.Countries[index].TotalDeaths
-      cell4.innerHTML = data.Countries[index].TotalRecovered
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      var cell5 = row.insertCell(4);
+      cell1.innerHTML = data.Countries[index].Country;
+      cell2.innerHTML = data.Countries[index].TotalConfirmed;
+      cell3.innerHTML = data.Countries[index].TotalConfirmed - data.Countries[index].TotalDeaths - data.Countries[index].TotalRecovered;
+      cell5.innerHTML = data.Countries[index].TotalDeaths;
+      cell4.innerHTML = data.Countries[index].TotalRecovered;
     }
   })
-
 }
 function RefreshData() {
-  clearData()
-  main()
-  $('#othercountrybtn').show()
+  clearData();
+  main();
+  $('#othercountrybtn').show();
 }
 function clearData() {
-  $("#data").empty
+  $("#data").empty;
+  $(#"countrydata").empty;
 }
