@@ -27,7 +27,6 @@ function main() {
   var url = "https://api.covid19api.com/summary"
   var globaldata = ''
   var countrydata = ''
-  var element = ''
   $.get(url, function (data) {
     //  console.log(data.Global)
 
@@ -60,12 +59,8 @@ function othercountrydata() {
   var url = "https://api.covid19api.com/summary"
   //  var otherdata=''
   $.get(url, function (data) {
-    //  console.log(data.Global)
-
-
-
+   
     for (let index = 0; index < 192; index++) {
-
       var table = document.getElementById("newtable");
       var row = table.insertRow(index + 1)
       var cell1 = row.insertCell(0)
