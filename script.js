@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) { //check if page is scrolled greater than 100px
-            $('.scroll-top').fadeIn(); //if this happens, fadein the button
+        if ($(this).scrollTop() > 100) { 
+            $('.scroll-top').fadeIn();
         } else {
             $('.scroll-top').fadeOut();
         }
@@ -9,15 +9,14 @@ $(document).ready(function () {
 
     $('.scroll-top').click(function () {
         $("html, body").animate({
-            scrollTop: 0 //when user clicks on button, scroll to top of the page to 0px
+            scrollTop: 0 
         }, 100);
         return false;
     });
 
 });
 $('.navbar-nav-scroll.menu li a').click(function(){
-    // applying again smooth scroll on menu items click
-    $('html').css("scrollBehavior", "smooth");
+      $('html').css("scrollBehavior", "smooth");
 });
 
 // toggle menu/navbar script
@@ -36,9 +35,9 @@ function main() {
     $('#othercountrydatabox').hide()
     var url = "https://api.covid19api.com/summary";
     var globaldata = '';
-    var countrydata = ''; // for india data, we have initialised it with empty so that we can append data in it.
+    var countrydata = ''; 
 
-    $.get(url, function (data) { // this is callback function, when we get url then call this function and store it in data name object.
+    $.get(url, function (data) { 
 
         globaldata = `<td> ${data.Global.TotalConfirmed}</td>
            <td> ${data.Global.TotalConfirmed - data.Global.TotalRecovered - data.Global.TotalDeaths}</td>
@@ -48,7 +47,7 @@ function main() {
            <td> ${data.Global.NewRecovered}</td>
            <td> ${data.Global.NewDeaths}</td>
           `
-        $("#data").html(globaldata) ;     // now when we get global data, then write it in html file by id of global data i.e data
+        $("#data").html(globaldata) ;    
 
         countrydata = `<td> ${data.Countries[76].TotalConfirmed}</td>  
          <td> ${data.Countries[76].TotalConfirmed - data.Countries[76].TotalRecovered - data.Countries[76].TotalDeaths}</td>
@@ -58,7 +57,7 @@ function main() {
          <td> ${data.Countries[76].NewRecovered}</td>
          <td> ${data.Countries[76].NewDeaths}</td>
         `
-        $("#countrydata").html(countrydata) ;   // india's data is at 76 index so we directly access that index to get india's covid data
+        $("#countrydata").html(countrydata) ;   
         console.log(data.Countries);
         console.log(data.Global);
     })
@@ -70,14 +69,14 @@ function othercountrydata() {
     var url = "https://api.covid19api.com/summary";
 
     $.get(url, function (data) {
-        for (let index = 0; index < 192; index++) {   // in api there r total 192 countries , so we run loop 192 times.... to check whether it is 192 countries or not, inspect the site and then go to console and then click on Array(192)
+        for (let index = 0; index < 192; index++) {   
             var table = document.getElementById("newtable");
-            var row = table.insertRow(index + 1)   // if we do only index, then it will over write the thead which is written in index.html means top row of table that contains name of country and ol will not visible if we do only index
+            var row = table.insertRow(index + 1)  
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
             var cell4 = row.insertCell(3);
-            var cell5 = row.insertCell(4);       // agar hum isme loop nhi chalate aur simple jaise india and global data jaisa krte to sidha last table i.e zimbabwe ka data fetch hoke aata
+            var cell5 = row.insertCell(4);      
             cell1.innerHTML = data.Countries[index].Country;
             cell2.innerHTML = data.Countries[index].TotalConfirmed;
             cell3.innerHTML = data.Countries[index].TotalConfirmed - data.Countries[index].TotalDeaths - data.Countries[index].TotalRecovered;
@@ -87,7 +86,7 @@ function othercountrydata() {
     })
 }
 
-function RefreshData() { //when user clicks on refreshdata button,  data of countrydata and global data will empty and main function will call so that firse table me data dikhjaae to empty kia tha
+function RefreshData() { 
     clearData();
     main();
     $('#othercountrybtn').show();
