@@ -6,9 +6,10 @@
  • API used: https://api.covid19api.com/summary </br>
      https://api.covid19api.com/countries</br>
      
-     Documentation of this API : https://documenter.getpostman.com/view/10808728/SzS8rjbc
+    
 </br> 
+ Documentation of this API : https://documenter.getpostman.com/view/10808728/SzS8rjbc
 </br>
-I took reference from WHO about corona and cowin website also for helpline numbers.</br>
-## Visuals </br>
-https://covid-19-trackerwebsite.netlify.app/
+I took reference from WHO about corona and cowin website also for helpline numbers.</br> </br>
+Link to website:
+</br>https://covid-19-trackerwebsite.netlify.app/
