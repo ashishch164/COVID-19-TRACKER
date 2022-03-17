@@ -5,6 +5,8 @@
  • IDE used: Visual Studio Code</br>
  • API used: https://api.covid19api.com/summary </br>
      https://api.covid19api.com/countries</br>
+     
+     Documentation of this API : https://documenter.getpostman.com/view/10808728/SzS8rjbc
 </br> 
 </br>
 I took reference from WHO about corona and cowin website also for helpline numbers.</br>
