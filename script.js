@@ -70,7 +70,7 @@ function othercountrydata() {
     var url = "https://api.covid19api.com/summary";
 
     $.get(url, function (data) {
-        for (let index = 0; index < 194; index++) {   // in api there r total 192 countries , so we run loop 192 times.... to check whether it is 192 countries or not, inspect the site and then go to console and then click on Array(192)
+        for (let index = 0; index < 194; index++) {   // in api there r total 194 countries , so we run loop 194 times.... to check whether it is 194 countries or not, inspect the site and then go to console and then click on Array(194)
             var table = document.getElementById("newtable");
             var row = table.insertRow(index + 1)   // if we do only index, then it will over write the thead which is written in index.html means top row of table that contains name of country and ol will not visible if we do only index
             var cell1 = row.insertCell(0);
