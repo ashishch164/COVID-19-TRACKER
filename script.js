@@ -39,6 +39,7 @@ function main() {
     var countrydata = ''; // for india data, we have initialised it with empty so that we can append data in it.
 
     $.get(url, function (data) { // this is callback function, when we get url then call this function and store it in data name object.
+        //A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some task
 
         globaldata = `<td> ${data.Global.TotalConfirmed}</td>
         <td> ${data.Global.TotalConfirmed - data.Global.TotalRecovered - data.Global.TotalDeaths}</td>
@@ -58,7 +59,7 @@ function main() {
         <td> ${data.Countries[77].NewRecovered}</td>
         <td> ${data.Countries[77].NewDeaths}</td>
        `
-        $("#countrydata").html(countrydata) ;   // india's data is at 76 index so we directly access that index to get india's covid data
+        $("#countrydata").html(countrydata) ;   // india's data is at 77 index so we directly access that index to get india's covid data
         console.log(data.Countries);
         console.log(data.Global);
     })
